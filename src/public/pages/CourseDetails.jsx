@@ -18,6 +18,16 @@ export default function CourseDetails() {
   const primary = brand?.primaryColor || "#059669";
   const accent = brand?.accentColor || "#ffffff";
 
+  function handleWhatsAppEnroll() {
+    const message = `Hi, I want to enroll in this course.
+
+Name:
+Email:
+Course: ${course.title}`;
+
+    const url = `https://wa.me/${brand.contact.whatsapp}?text=${encodeURIComponent(message)}`;
+    window.open(url, "_blank");
+  }
   useEffect(() => {
     async function load() {
       window.scrollTo({
@@ -103,7 +113,7 @@ export default function CourseDetails() {
             {/* ACTION BUTTONS */}
             {!user && (
               <a
-                href="/login"
+                href="/register"
                 className="inline-block px-8 py-3 bg-white text-black rounded-xl font-semibold"
               >
                 Login to Enroll
@@ -119,12 +129,21 @@ export default function CourseDetails() {
               </button>
             )}
 
-            {user && !owned && (
+            {/* {user && !owned && (
               <button
                 onClick={() => buy(courseId)}
                 className="px-8 py-3 bg-white text-black rounded-xl font-semibold"
               >
                 Purchase Course
+              </button>
+            )} */}
+
+            {user && !owned && (
+              <button
+                onClick={handleWhatsAppEnroll}
+                className="px-8 py-3 bg-green-500 text-white rounded-xl font-semibold"
+              >
+                Enroll via WhatsApp
               </button>
             )}
           </div>
@@ -179,7 +198,7 @@ export default function CourseDetails() {
       </div>
 
       <div className="items-center text-center py-20 ">
-        
+
 
         {/* ACTION BUTTONS */}
         {!user && (
