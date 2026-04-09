@@ -87,14 +87,14 @@ Course: ${course.title}`;
   if (!course) return <div className="py-20 text-center">Course not found!!!.</div>;
 
   return (
-    <div className="min-h-screen bg-gray-50 md:px-16">
+    <div className="min-h-screen bg-gray-50 ">
 
       {/* ===== HERO ===== */}
       <div
         className="text-white py-16 "
         style={{ backgroundColor: primary }}
       >
-        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center md:px-16">
 
           {/* LEFT */}
           <div className="space-y-6">
