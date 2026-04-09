@@ -160,7 +160,7 @@ export default function WatchCourse() {
                     </h2>
 
                     {currentChapter.description && (
-                      <p className="text-sm text-slate-500 mt-1">
+                      <p className="text-sm text-slate-800 mt-1 leading-relaxed whitespace-pre-line">
                         {currentChapter.description}
                       </p>
                     )}
