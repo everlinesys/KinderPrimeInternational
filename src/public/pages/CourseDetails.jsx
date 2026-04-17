@@ -9,7 +9,7 @@ export default function CourseDetails() {
   const { courseId } = useParams();
   const user = getUser();
   const brand = useBranding();
-
+  const [selectedPlan, setSelectedPlan] = useState("full");
   const [course, setCourse] = useState(null);
   const [units, setUnits] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -18,16 +18,6 @@ export default function CourseDetails() {
   const primary = brand?.primaryColor || "#059669";
   const accent = brand?.accentColor || "#ffffff";
 
-  function handleWhatsAppEnroll() {
-    const message = `Hi, I want to enroll in this course.
-
-Name:
-Email:
-Course: ${course.title}`;
-
-    const url = `https://wa.me/${brand.contact.whatsapp}?text=${encodeURIComponent(message)}`;
-    window.open(url, "_blank");
-  }
   useEffect(() => {
     async function load() {
       window.scrollTo({
@@ -38,7 +28,14 @@ Course: ${course.title}`;
         const courseRes = await api.get(`/courses/${courseId}`);
         const unitsRes = await api.get(`/units?courseId=${courseId}`);
 
-        setCourse(courseRes.data);
+        const data = courseRes.data;
+
+        setCourse({
+          ...data,
+          installmentOptions: Array.isArray(data.installmentOptions)
+            ? data.installmentOptions
+            : JSON.parse(data.installmentOptions || "[]"),
+        });
         setUnits(unitsRes.data);
 
         if (user) {
@@ -60,7 +57,11 @@ Course: ${course.title}`;
     const user = getUser();
     if (!user) return (window.location = "/register");
 
-    const orderRes = await api.post("/payments/create-order", { courseId });
+    // const orderRes = await api.post("/payments/create-order", { courseId });
+    const orderRes = await api.post("/payments/create-order", {
+      courseId,
+      plan: selectedPlan === "full" ? 1 : selectedPlan,
+    });
 
     const options = {
       key: orderRes.data.key,
@@ -75,6 +76,7 @@ Course: ${course.title}`;
           razorpay_payment_id: response.razorpay_payment_id,
           razorpay_signature: response.razorpay_signature,
           courseId,
+          plan: selectedPlan === "full" ? 1 : selectedPlan,
         });
         window.location = `/student/watch/${courseId}`;
       },
@@ -96,6 +98,7 @@ Course: ${course.title}`;
       >
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center md:px-16">
 
+
           {/* LEFT */}
           <div className="space-y-6">
             <h1 className="text-4xl md:text-5xl font-black">
@@ -108,12 +111,57 @@ Course: ${course.title}`;
 
             <div className="text-3xl  font-bold">
               ₹{course.price} <span className="line-through text-white/70 text-2xl"> ₹{course.oldPrice}</span>
+              {/* PAYMENT OPTIONS */}
             </div>
+            {course.installmentOptions?.length > 0 && !owned && (
+              <div className="mt-6 space-y-3">
+
+                <p className="text-sm opacity-80">Choose Payment Plan</p>
+
+                <div className="flex flex-wrap gap-2">
+
+                  {/* ONE TIME */}
+                  <button
+                    onClick={() => setSelectedPlan("full")}
+                    className={`px-4 py-2 rounded-lg text-sm font-semibold ${selectedPlan === "full"
+                      ? "bg-white text-black"
+                      : "bg-white/20 text-white"
+                      }`}
+                  >
+                    One-time
+                  </button>
+
+                  {/* INSTALLMENTS */}
+                  {course.installmentOptions
+                    ?.filter((m) => Number.isFinite(m) && m > 0) // 👈 FILTER BAD VALUES
+                    .map((months) => (
+                      <button
+                        key={months}
+                        onClick={() => setSelectedPlan(months)}
+                        className={`px-4 py-2 rounded-xl text-sm font-semibold transition ${selectedPlan === months
+                          ? "bg-white text-black shadow"
+                          : "bg-white/20 text-white hover:bg-white/30"
+                          }`}
+                      >
+                        {months} mo
+                      </button>
+                    ))}
+                </div>
+
+                {/* 💰 PRICE PREVIEW */}
+                {selectedPlan !== "full" && (
+                  <p className="text-sm opacity-90">
+                    ₹{Math.ceil(course.price / selectedPlan)} × {selectedPlan} months
+                  </p>
+                )}
+
+              </div>
+            )}
 
             {/* ACTION BUTTONS */}
             {!user && (
               <a
-                href="/register"
+                href="/login"
                 className="inline-block px-8 py-3 bg-white text-black rounded-xl font-semibold"
               >
                 Login to Enroll
@@ -129,21 +177,12 @@ Course: ${course.title}`;
               </button>
             )}
 
-            {/* {user && !owned && (
+            {user && !owned && (
               <button
                 onClick={() => buy(courseId)}
                 className="px-8 py-3 bg-white text-black rounded-xl font-semibold"
               >
                 Purchase Course
-              </button>
-            )} */}
-
-            {user && !owned && (
-              <button
-                onClick={handleWhatsAppEnroll}
-                className="px-8 py-3 bg-green-500 text-white rounded-xl font-semibold"
-              >
-                Enroll via WhatsApp
               </button>
             )}
           </div>
