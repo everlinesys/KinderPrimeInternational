@@ -3,45 +3,69 @@ import VideoPlayer from "../../shared/video/VideoPlayer";
 
 export default function PreviewVideo() {
   const brand = useBranding();
-  const theme = brand.theme || {};
   const preview = brand.preview || {};
 
-  const videoId =
-    preview.bunnyVideoId ||
-    brand.hero?.bunnyVideoId;
+  const mainVideoId =
+    preview.bunnyVideoId || brand.hero?.bunnyVideoId;
 
   const poster =
-    preview.poster ||
-    brand.hero?.poster;
+    preview.poster || brand.hero?.poster;
+
+  // 🎯 ALL 3 VIDEOS TOGETHER
+  const videos = [
+    {
+      id: mainVideoId,
+      title: "Hello Friends",
+      poster: poster,
+    },
+    {
+      id: "f5264a6b-9889-4a68-8ad8-d1756e1b6eb1",
+      title: "Learning Moments",
+    },
+    {
+      id: "c4f88864-3680-418f-ba19-0d6e7744af4d",
+      title: "Learning Fun",
+    },
+  ];
 
   return (
-    <section className="relative overflow-hidden bg-white text-black md:px-16">
-      <div className="relative z-10 grid lg:grid-cols-2 gap-8 items-center">
+    <section className="bg-white text-black px-6 md:px-16 py-12">
+      
+      {/* 🎥 VIDEOS GRID */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {videos.map((vid, i) => (
+          <div
+            key={i}
+            className="rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition"
+          >
+            <VideoPlayer
+              videoId={vid.id}
+              poster={vid.poster}
+            />
 
-        {/* 🎥 VIDEO — CLEAN */}
-        <div className="w-full">
-           <VideoPlayer
-            videoId={videoId}
-            poster={poster}
-          /> 
-          {/* <img src="/hero.png" alt="" /> */}
-        </div>
-
-        {/* 📝 TEXT — KEPT */}
-        <div className="p-6 md:p-10 lg:p-14 space-y-6 md:space-y-8">
-          <h2 className={`text-xl md:text-5xl font-bold `}>
-            {preview.title}{" "}
-            <span style={{ color: brand.colors.primary }}>
-              {preview.highlight}
-            </span>
-          </h2>
-
-          <p className={`text-sm md:text-base `}>
-            {preview.description}
-          </p>
-        </div>
-
+            <div className="p-3">
+              <p className="font-semibold text-sm">
+                {vid.title}
+              </p>
+            </div>
+          </div>
+        ))}
       </div>
+
+      {/* 📝 TEXT BELOW (optional) */}
+      <div className="mt-12 max-w-3xl">
+        <h2 className="text-2xl md:text-4xl font-bold">
+          {preview.title}{" "}
+          <span style={{ color: brand.colors.primary }}>
+            {preview.highlight}
+          </span>
+        </h2>
+
+        <p className="mt-4 text-gray-600">
+          {preview.description}
+        </p>
+      </div>
+
     </section>
   );
 }

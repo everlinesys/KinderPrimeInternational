@@ -42,22 +42,22 @@ export default function Hero() {
         <div className="space-y-6 text-center md:text-left">
 
           {/* Image top mobile only */}
-          <div className="relative md:hidden md:block group ">
-
+          <div className="relative md:hidden lg:hidden flex justify-center md:block group">
             {brand.logo ? (
               <img
                 src={brand.logo}
                 alt={brand.siteName}
-                className={`relative z-10 ${brand.theme.shape?.radius || ""}  object-cover aspect-[4/4] w-full `}
+                className={`relative z-10 ${brand.theme.shape?.radius || ""} object-cover aspect-square w-60 mx-auto`}
               />
             ) : (
-              <div className={`relative z-10 ${brand.theme.layout.panel} aspect-[4/3] w-full flex items-center justify-center`}>
+              <div
+                className={`relative z-10 ${brand.theme.layout.panel} aspect-[4/3] w-full flex items-center justify-center`}
+              >
                 <div className="text-white/10 font-black text-8xl uppercase -rotate-12 select-none tracking-tighter">
                   Learn
                 </div>
               </div>
             )}
-
           </div>
           {/* Badge */}
           <div className={`inline-flex items-center gap-2 px-3 py-1 ${brand.theme.layout.panel} ${brand.theme.shape?.radius || ""}`}>
@@ -80,7 +80,7 @@ export default function Hero() {
           {/* Title */}
           <h1
             className="text-4xl md:text-5xl font-bold leading-[1.1] tracking-tight"
-            // style={{ color: brand.colors.primary }}
+          // style={{ color: brand.colors.primary }}
           >
             {brand.hero?.title || "Welcome to eLearn"}
           </h1>
@@ -139,7 +139,7 @@ export default function Hero() {
             <img
               src={brand.logo}
               alt="Learning"
-              className={`relative z-10 ${brand.theme.shape?.radius || ""}  object-cover aspect-[4/4] w-full `}
+              className={`relative z-10 ${brand.theme.shape?.radius || ""}  object-cover aspect-[4/4] w-100 `}
             />
           ) : (
             <div className={`relative z-10 ${brand.theme.layout.panel} aspect-[4/3] w-full flex items-center justify-center`}>
