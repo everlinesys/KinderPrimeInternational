@@ -1,92 +1,96 @@
 {
   "default": {
     "siteName": "Kinder Prime International",
-    "tagline": "Nurturing Young Minds Through Fun & Digital Learning",
-
+    "tagline": "Nurturing Young Minds & Empowering Educators",
     "primaryColor": "#f59e0b",
     "theme": "kinderPlayful",
-
     "logo": "/kinderlogo.png",
-    "students": "150+",
-
+    "students": "500+ Certified & Enrolled",
     "colors": {
       "primary": "#f59e0b",
       "accent": "black"
     },
-
     "hero": {
-      "title": "Online Preschool for Pre KG, LKG & UKG",
-      "subtitle": "Give your child a strong foundation with interactive online classes, creative activities, and expert guidance — all from the comfort of home.",
+      "title": "Global Hub for Preschooling & Montessori Training",
+      "subtitle": "Join our interactive online preschool for kids or kickstart your career with our International Montessori Teacher Training Course (TTC).",
       "image": "/hero.png",
-
       "bunnyVideoId": "91302432-7053-465a-aebe-609335db2be3",
       "poster": "/hero.png"
     },
-
     "preview": {
-      "badge": "Early Learning Academy",
-      "title": "A joyful start to your child’s learning journey",
-      "highlight": "Interactive Online Preschool Experience",
-      "description": "Kinder Prime International offers structured and engaging online classes for Pre KG, LKG, and UKG students. Our program focuses on developing creativity, communication, and foundational skills through fun activities and guided learning.",
-
+      "badge": "Early Learning & Professional Academy",
+      "title": "Excellence in Early Childhood Education",
+      "highlight": "Dual-Path Learning Experience",
+      "description": "Kinder Prime International provides a dual platform: a joyful, structured online preschool for Pre-KG to UKG, and a professional Montessori TTC program for aspiring teachers worldwide.",
       "bunnyVideoId": "91302432-7053-465a-aebe-609335db2be3",
       "libraryId": "your-library-id",
       "poster": "/kinder-preview.jpg",
-
       "videoUrl": "https://youtube.com",
-
       "perks": [
-        { "value": "NO DONATION", "label": "No Hidden Charges" },
-        { "value": "FUN LEARNING", "label": "Creative Activity-Based Learning" }
+        { "value": "INTERNATIONALLY RECOGNIZED", "label": "TTC Certification" },
+        { "value": "NO DONATION", "label": "Transparent Preschool Admissions" },
+        { "value": "LIVE INTERACTION", "label": "Expert-Led Daily Sessions" }
       ]
     },
-
+    "teacherTraining": {
+      "title": "Montessori Teacher Training (TTC)",
+      "description": "Transform your passion for teaching into a professional career with our comprehensive online Montessori TTC.",
+      "features": [
+        "International Montessori Curriculum",
+        "Flexible Online Batches for Homemakers & Students",
+        "Child Psychology & Nutrition Modules",
+        "Internship Support & Placement Guidance",
+        "Recognized Certification"
+      ],
+      "pricing": "Affordable EMI options available"
+    },
     "pricingInfo": {
-      "title": "Affordable Preschool Program",
+      "title": "Affordable Fee Structure",
       "items": [
-        "Course Fee: ₹17,000/year (including GST)",
-        "Offer Fee: ₹15,000/year (Early Booking)",
+        "Preschool: ₹15,000 - ₹17,000/year",
+        "Montessori TTC: Contact for Current Seasonal Offers",
         "Admission Fee: ₹2,000 to reserve seat",
-        "No Donation / Vehicle / Extra Charges",
-        "Books & Workbooks: Approx ₹2,000"
+        "Zero Hidden Charges / No Donation",
+        "Flexible Installment Facilities"
       ]
     },
-
     "schedule": {
-      "title": "Class Schedule",
+      "title": "Academic Timing",
       "details": [
-        "Classes: Monday to Friday",
-        "Two sessions per day (40 mins each)",
-        "Time Window: 11:00 AM – 3:00 PM IST",
-        "LKG: 11:00 AM – 12:30 PM",
-        "UKG: 1:00 PM – 2:30 PM"
+        "Preschool: Mon - Fri (11:00 AM – 3:00 PM IST)",
+        "TTC Batches: Morning, Afternoon & Weekend Slots",
+        "Daily Live Sessions: 40 - 90 mins based on program",
+        "Recorded Lessons available for TTC students"
       ]
     },
-
     "features": [
-      "Live interactive classes",
+      "Live interactive classes for kids & adults",
       "Creative skill development activities",
       "Structured Montessori-based learning",
-      "Trained and experienced teachers",
-      "Eligible for any syllabus after completion"
+      "Trained and experienced faculty",
+      "Career-oriented training for aspiring educators"
     ],
-
     "team": [
       {
         "name": "Pooja Raj",
-        "role": "Director",
+        "role": "Director & Lead Trainer",
         "qualification": "BA, Montessori TTC, Learning Disability, Nutrition & Dietetics",
         "image": "/pooja.png"
       },
       {
         "name": "Jesna Siyad",
-        "role": "Principal",
+        "role": "Principal & Academic Coordinator",
         "qualification": "M.A, B.Ed, B.Sc, Montessori TTC, Abacus Training",
         "image": "/jesna.jpeg"
       }
     ],
-
     "reviews": [
+      {
+        "name": "Anjali Krishna",
+        "role": "TTC Student",
+        "rating": 5,
+        "text": "The Montessori TTC course is life-changing. The flexible timings helped me manage my home while studying."
+      },
       {
         "name": "Aisha Rahman",
         "role": "Parent",
@@ -94,19 +98,12 @@
         "text": "Very engaging classes. My child enjoys learning every day and has improved a lot in communication."
       },
       {
-        "name": "Nikhil Menon",
-        "role": "Parent",
+        "name": "Sneha P.",
+        "role": "Certified Teacher",
         "rating": 5,
-        "text": "Affordable and structured. Teachers are very supportive and caring."
-      },
-      {
-        "name": "Fathima Basheer",
-        "role": "Parent",
-        "rating": 4,
-        "text": "Great online preschool option with fun activities and good learning balance."
+        "text": "I got placed in a reputed school immediately after finishing my TTC here. Highly recommended!"
       }
     ],
-
     "contact": {
       "email": "support@kinderprimeinternational.com",
       "phone": "+91 8921268063",
