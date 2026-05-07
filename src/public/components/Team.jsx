@@ -5,7 +5,7 @@ export default function Team() {
   const team = brand.team || [];
 
   return (
-    <section className={`${brand.theme.layout.container } md:px-16`} >
+    <section className={`${brand.theme.layout.container } md:px-16 min-w-full`} >
       <div className={`${brand.theme.layout.container } py-16 md:py-24  `}>
 
         {/* Heading */}

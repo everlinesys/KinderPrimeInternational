@@ -63,7 +63,7 @@ export default function AdminHeader({ onMenuClick }) {
         </button> */}
 
         {/* PROFILE */}
-        <div className="relative">
+        <div className="relative text-gray-800">
           <button
             onClick={() => setOpen(!open)}
             className="flex items-center gap-2"

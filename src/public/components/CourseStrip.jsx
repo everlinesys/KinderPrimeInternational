@@ -53,8 +53,7 @@ export default function FeaturedCoursesStrip() {
                 <div
                     ref={scrollRef}
                     onScroll={handleScroll}
-                    className="relative z-10 flex gap-6 overflow-x-auto pb-8 no-scrollbar snap-x snap-mandatory"
-                    style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+                className="relative z-10 flex flex-col md:flex-row gap-6 md:overflow-x-auto pb-8 no-scrollbar md:snap-x md:snap-mandatory"    style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
                 >
                     {courses.slice(0, 10).map((course) => (
                         <Link
