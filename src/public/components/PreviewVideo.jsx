@@ -18,14 +18,14 @@ export default function PreviewVideo() {
       title: "Hello Friends",
       poster: poster,
     },
-    {
-      id: "f5264a6b-9889-4a68-8ad8-d1756e1b6eb1",
-      title: "Learning Moments",
-    },
-    {
-      id: "c4f88864-3680-418f-ba19-0d6e7744af4d",
-      title: "Learning Fun",
-    },
+    // {
+    //   id: "f5264a6b-9889-4a68-8ad8-d1756e1b6eb1",
+    //   title: "Learning Moments",
+    // },
+    // {
+    //   id: "c4f88864-3680-418f-ba19-0d6e7744af4d",
+    //   title: "Learning Fun",
+    // },
   ];
 
   return (
