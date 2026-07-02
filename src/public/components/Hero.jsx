@@ -73,7 +73,7 @@ export default function Hero() {
             </span>
 
             <span className={`text-[10px] uppercase tracking-widest ${brand.theme.text?.label || ""}`}>
-              Live Learning Portal
+              ISO 9001:2015 CERTIFIED INSTITUTION
             </span>
           </div>
 

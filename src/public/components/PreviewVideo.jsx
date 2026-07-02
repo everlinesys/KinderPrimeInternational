@@ -29,43 +29,49 @@ export default function PreviewVideo() {
   ];
 
   return (
-    <section className="bg-white text-black px-6 md:px-16 py-12">
+    <section className="bg-white text-black px-6 md:px-16 py-12 grid  md:grid-cols-3 gap-12">
+      <img
+        src="/ad1.jpeg"
+        alt="Preview Poster"
+        className="rounded-2xl shadow-md hover:shadow-xl transition md:max-h-[400px] md:w-auto object-cover mb-6 md:mb-0"
+      />
       
-      {/* 🎥 VIDEOS GRID */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {videos.map((vid, i) => (
-          <div
-            key={i}
-            className="rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition"
-          >
-            <VideoPlayer
-              videoId={vid.id}
-              poster={vid.poster}
-            />
+        {/* 🎥 VIDEOS GRID */}
+        <div className="">
 
-            <div className="p-3">
-              <p className="font-semibold text-sm">
-                {vid.title}
-              </p>
+          {videos.map((vid, i) => (
+            <div
+              key={i}
+              className="rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition"
+            >
+              <VideoPlayer
+                videoId={vid.id}
+                poster={vid.poster}
+              />
+
+              <div className="p-3">
+                <p className="font-semibold text-sm">
+                  {vid.title}
+                </p>
+              </div>
             </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
 
-      {/* 📝 TEXT BELOW (optional) */}
-      <div className="mt-12 max-w-3xl">
-        <h2 className="text-2xl md:text-4xl font-bold">
-          {preview.title}{" "}
-          <span style={{ color: brand.colors.primary }}>
-            {preview.highlight}
-          </span>
-        </h2>
+        {/* 📝 TEXT BELOW (optional) */}
+        <div className="mt-12 max-w-3xl">
+          <h2 className="text-2xl md:text-4xl font-bold">
+            {preview.title}{" "}
+            <span style={{ color: brand.colors.primary }}>
+              {preview.highlight}
+            </span>
+          </h2>
 
-        <p className="mt-4 text-gray-600">
-          {preview.description}
-        </p>
-      </div>
-
+          <p className="mt-4 text-gray-600">
+            {preview.description}
+          </p>
+        </div>
+     
     </section>
   );
 }
