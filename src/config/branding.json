@@ -12,7 +12,7 @@
     },
     "hero": {
       "title": "Global Hub for Preschooling & Montessori Training",
-      "subtitle": "Join our interactive online preschool for kids or kickstart your career with our International Montessori Teacher Training Course (TTC).",
+      "subtitle": "Kinder Prime Internationalis a dynamic learning hub dedicated to empowering learners of all ages through quality education, skill development, and career-focused training.",
       "image": "/hero.png",
       "bunnyVideoId": "91302432-7053-465a-aebe-609335db2be3",
       "poster": "/hero.png"
@@ -76,12 +76,6 @@
         "role": "Founder & Director",
         "qualification": "BA, Montessori TTC, Learning Disability, Nutrition & Dietetics",
         "image": "/pooja.jpeg"
-      },
-      {
-        "name": "Jesna Siyad",
-        "role": "Principal & Academic Coordinator",
-        "qualification": "M.A, B.Ed, B.Sc, Montessori TTC, Abacus Training",
-        "image": "/jesna.jpeg"
       }
     ],
     "reviews": [
