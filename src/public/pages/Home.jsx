@@ -6,12 +6,14 @@ import Enroll from "../components/Enroll";
 import Courses from "./Courses";
 import FeaturedCoursesStrip from "../components/CourseStrip";
 import Team from "../components/Team";
+import About from "../components/AboutUs";
 
 
 export default function Home() {
   return (
     <div className="">
       <Hero />
+      <About/>
       <PreviewVideo />
 
       <FeaturedCoursesStrip />
